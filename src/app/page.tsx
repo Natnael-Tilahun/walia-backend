@@ -13,10 +13,12 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex w-full min-h-screen flex-col justify-between p-10">
-      <div className="flex items-center justify-between space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-        <div className="flex items-center space-x-2">
+    <main className="flex w-full min-h-screen flex-col justify-between gap-5 lg:gap-0 p-5 lg:p-10">
+      <div className="flex flex-col   w-full md:flex-row items-center justify-between space-y-2">
+        <h2 className="lg:text-3xl md:text-xl font-bold tracking-tight">
+          Dashboard
+        </h2>
+        <div className="flex w-full items-center justify-end md:w-auto  space-x-2">
           <CalendarDateRangePicker />
           <Button>Download</Button>
         </div>
