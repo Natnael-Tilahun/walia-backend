@@ -10,6 +10,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./ui/collapsible";
+import { usePathname } from "next/navigation";
 
 // interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
 //   //   playlists: Playlist[];
@@ -17,7 +18,7 @@ import {
 
 export function Sidebar({ className, setMenu }: any) {
   const [position, setPosition] = useState("bottom");
-
+  const pathName = usePathname();
   return (
     <div className={cn(`pb-12  min-h-screen bg-inherit  `, className)}>
       <div className="space-y-4 py-4">
@@ -40,7 +41,9 @@ export function Sidebar({ className, setMenu }: any) {
             <Link
               href="/"
               onClick={() => setMenu(false)}
-              className="w-full flex items-center "
+              className={`w-full flex items-center hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                pathName == "/" ? "bg-slate-200" : ""
+              }`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,9 +57,15 @@ export function Sidebar({ className, setMenu }: any) {
               </svg>
               <span className="">Dashboard</span>
             </Link>
+
             <Collapsible>
               <CollapsibleTrigger asChild>
-                <Link href="/users" className="w-full flex items-center">
+                <Link
+                  href="/users"
+                  className={`w-full flex items-center hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/users" ? "bg-slate-200" : ""
+                  }`}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -86,7 +95,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/users"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center pt-2 mt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +114,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/users"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center pt-2 mt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +137,9 @@ export function Sidebar({ className, setMenu }: any) {
               <CollapsibleTrigger asChild>
                 <Link
                   href="/"
-                  className="w-full flex items-center md:justify-center lg:justify-start"
+                  className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/jobs" ? "bg-slate-200" : ""
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +170,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/jobs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -178,7 +189,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/jobs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center pt-2 mt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -201,7 +212,9 @@ export function Sidebar({ className, setMenu }: any) {
               <CollapsibleTrigger asChild>
                 <Link
                   href="/"
-                  className="w-full flex items-center md:justify-center lg:justify-start"
+                  className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/companies" ? "bg-slate-200" : ""
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -232,7 +245,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/companies"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -251,7 +264,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/companies"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md  "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -274,7 +287,9 @@ export function Sidebar({ className, setMenu }: any) {
               <CollapsibleTrigger asChild>
                 <Link
                   href="/"
-                  className="w-full flex items-center md:justify-center lg:justify-start"
+                  className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/blogs" ? "bg-slate-200" : ""
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -305,7 +320,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/blogs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -324,7 +339,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/blogs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -347,7 +362,9 @@ export function Sidebar({ className, setMenu }: any) {
               <CollapsibleTrigger asChild>
                 <Link
                   href="/"
-                  className="w-full flex items-center md:justify-center lg:justify-start"
+                  className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/cvs" ? "bg-slate-200" : ""
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -378,7 +395,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/cvs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-3 py-2 rounded-md "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -397,7 +414,7 @@ export function Sidebar({ className, setMenu }: any) {
                 <Link
                   href="/cvs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-4 pb-2"
+                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
