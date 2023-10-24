@@ -167,7 +167,7 @@ export const columns: ColumnDef<Job>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Education" />
     ),
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }) => {
       return <span>{generateExcerpt(row.getValue("education")[0], 15)}</span>;
     },
   },
@@ -176,7 +176,7 @@ export const columns: ColumnDef<Job>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Description" />
     ),
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }) => {
       return <span>{generateExcerpt(row.getValue("description"), 15)}</span>;
     },
   },
@@ -185,7 +185,7 @@ export const columns: ColumnDef<Job>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Responsiblities" />
     ),
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }) => {
       return (
         <span>{generateExcerpt(row.getValue("responsiblities")[0], 15)}</span>
       );
@@ -196,7 +196,7 @@ export const columns: ColumnDef<Job>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Job Tags" />
     ),
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }) => {
       return <span>{generateExcerpt(row.getValue("jobTags")[0], 15)}</span>;
     },
   },
@@ -205,7 +205,7 @@ export const columns: ColumnDef<Job>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Requirements" />
     ),
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }) => {
       return (
         <span>{generateExcerpt(row.getValue("requirements")[0], 15)}</span>
       );
@@ -216,7 +216,7 @@ export const columns: ColumnDef<Job>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Preferred Skills" />
     ),
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }) => {
       return (
         <span>{generateExcerpt(row.getValue("preferredSkills")[0], 15)}</span>
       );
