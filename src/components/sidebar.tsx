@@ -211,7 +211,7 @@ export function Sidebar({ className, setMenu }: any) {
             <Collapsible>
               <CollapsibleTrigger asChild>
                 <Link
-                  href="/"
+                  href="/companies"
                   className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
                     pathName == "/companies" ? "bg-slate-200" : ""
                   }`}
@@ -286,7 +286,7 @@ export function Sidebar({ className, setMenu }: any) {
             <Collapsible>
               <CollapsibleTrigger asChild>
                 <Link
-                  href="/"
+                  href="/blogs"
                   className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
                     pathName == "/blogs" ? "bg-slate-200" : ""
                   }`}

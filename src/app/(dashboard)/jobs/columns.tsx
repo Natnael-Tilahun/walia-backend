@@ -65,9 +65,7 @@ export const columns: ColumnDef<Job>[] = [
     accessorKey: "id",
     header: "Id",
     cell: ({ row }) => {
-      return (
-        <span className="">{generateExcerpt(row.getValue("id"), 15)}</span>
-      );
+      return <span className="">{generateExcerpt(row.getValue("id"), 3)}</span>;
     },
   },
   {
@@ -97,13 +95,13 @@ export const columns: ColumnDef<Job>[] = [
   {
     accessorKey: "department",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Department" />
+      <DataTableColumnHeader column={column} title="Dep" />
     ),
   },
   {
     accessorKey: "experience",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Experience" />
+      <DataTableColumnHeader column={column} title="Exp" />
     ),
   },
   {
@@ -228,7 +226,7 @@ export const columns: ColumnDef<Job>[] = [
       <DataTableColumnHeader column={column} title="Img" />
     ),
     cell: ({ row }) => {
-      return <span>{generateExcerpt(row.getValue("img"), 20)}</span>;
+      return <span>{generateExcerpt(row.getValue("img"), 10)}</span>;
     },
   },
   {
@@ -249,12 +247,12 @@ export const columns: ColumnDef<Job>[] = [
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(user.id)}
             >
-              Copy user ID
+              Copy Job ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem> Edit User</DropdownMenuItem>
-            <DropdownMenuItem>Delete User</DropdownMenuItem>
-            <DropdownMenuItem>View User Detail</DropdownMenuItem>
+            <DropdownMenuItem> Edit Job</DropdownMenuItem>
+            <DropdownMenuItem>Delete Job</DropdownMenuItem>
+            <DropdownMenuItem>View Job Details</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
