@@ -30,7 +30,13 @@ export default async function Blogs() {
   const data = await getData();
 
   return (
-    <div className="px-5 lg:px-16 mx-auto py-10">
+    <div className="px-5 lg:px-10 mx-auto py-10">
+      <div>
+        <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
+        <p className="text-muted-foreground">
+          Here&apos;s a list of your blogs!
+        </p>
+      </div>
       <DataTable columns={columns} data={data} />
     </div>
   );
