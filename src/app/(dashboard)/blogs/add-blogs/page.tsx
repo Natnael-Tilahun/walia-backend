@@ -8,7 +8,7 @@ import { Label } from 'recharts';
 
 // Types
 interface FieldType {
-  name: 'blogTitle'|'blogContent'|'author';
+  name: 'blogTitle'|'blogContent'|'image'|'author';
   label: string;
   placeholder: string;
 }
