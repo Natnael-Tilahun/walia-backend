@@ -1,7 +1,7 @@
 "use client"
 
 import { useInfos } from "@/stores/newJobForm/infos"
-import { usePlan } from "@/stores/newJobForm/plan"
+// import { usePlan } from "@/stores/newJobForm/plan"
 import { shallow } from 'zustand/shallow'
 import { usePathname, useRouter } from "next/navigation"
 import { useCallback, useEffect, useMemo } from "react"
@@ -15,7 +15,7 @@ export default function NextStepNavigation() {
 
   // Page stores
   const infosCompleted = useInfos(state=>state.completed)
-  const plan = usePlan(state=>state.plan,shallow)
+//   const plan = usePlan(state=>state.plan,shallow)
 
   // In order to push to the next step
   const nextPath = useMemo(()=>{
@@ -31,9 +31,9 @@ export default function NextStepNavigation() {
   const toNext = useCallback(() => {
     let canPush = true
     if(path === '/') canPush = infosCompleted  // else Check errors
-    if(path === '/plan') canPush = plan !== null
+    // if(path === '/plan') canPush = plan !== null
     if(canPush) router.push(nextPath)
-  },[path,infosCompleted,nextPath,router,plan])
+  },[path,infosCompleted,nextPath,router])
 
 
   if (path === "/thank") return null
