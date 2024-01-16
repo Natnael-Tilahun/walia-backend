@@ -3,11 +3,12 @@
 import { create } from "zustand";
 
 // types
-type FieldType = "name" | "email" | "phone";
+type FieldType = "blogTitle" | "blogContent" | "image" | "author";
 interface InfosState {
-  name: string;
-  email: string;
-  phone: string;
+  blogTitle: string;
+  blogContent: string;
+  image: string;
+  author: string;
 }
 
 interface InfosStore {
@@ -19,9 +20,10 @@ interface InfosStore {
 // Functions
 const validateInfos = (infos: InfosState) => {
   if (
-    infos.name.length === 0 ||
-    infos.email.length === 0 ||
-    infos.phone.length === 0
+    infos.blogTitle.length === 0 ||
+    infos.blogContent.length === 0 ||
+    infos.image.length === 0 ||
+    infos.author.length === 0
   )
     return false;
   return true;
@@ -29,9 +31,10 @@ const validateInfos = (infos: InfosState) => {
 
 export const useInfos = create<InfosStore>((set, get) => ({
   infos: {
-    name: "",
-    email: "",
-    phone: "",
+    blogTitle: "",
+    blogContent: "",
+    image: "",
+    author: "",
   },
   completed: false,
   setInfos: (field, value) =>
