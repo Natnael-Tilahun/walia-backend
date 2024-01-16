@@ -64,9 +64,9 @@ export const columns: ColumnDef<Job>[] = [
   {
     accessorKey: "id",
     header: "Id",
-    cell: ({ row }) => {
-      return <span className="">{generateExcerpt(row.getValue("id"), 3)}</span>;
-    },
+    // cell: ({ row }) => {
+    //   return <span className="">{generateExcerpt(row.getValue("id"), 3)}</span>;
+    // },
   },
   {
     accessorKey: "title",
@@ -85,6 +85,14 @@ export const columns: ColumnDef<Job>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Job Type" />
     ),
+    
+    // cell: ({ row }) =>
+    //   (
+    //     <div className="lowercase bg-slate-600 max-w-[210px] truncate">
+    //       {row.getValue("email")}
+    //     </div>
+    //   ),
+  
   },
   {
     accessorKey: "workMode",
@@ -165,69 +173,69 @@ export const columns: ColumnDef<Job>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Education" />
     ),
-    cell: ({ row }: { row: any }) => {
-      return <span>{generateExcerpt(row.getValue("education")[0], 15)}</span>;
-    },
+    // cell: ({ row }: { row: any }) => {
+    //   return <span>{generateExcerpt(row.getValue("education")[0], 15)}</span>;
+    // },
   },
   {
     accessorKey: "description",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Description" />
     ),
-    cell: ({ row }: { row: any }) => {
-      return <span>{generateExcerpt(row.getValue("description"), 15)}</span>;
-    },
+    // cell: ({ row }: { row: any }) => {
+    //   return <span>{generateExcerpt(row.getValue("description"), 15)}</span>;
+    // },
   },
   {
     accessorKey: "responsiblities",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Responsiblities" />
     ),
-    cell: ({ row }: { row: any }) => {
-      return (
-        <span>{generateExcerpt(row.getValue("responsiblities")[0], 15)}</span>
-      );
-    },
+    // cell: ({ row }: { row: any }) => {
+    //   return (
+    //     <span>{generateExcerpt(row.getValue("responsiblities")[0], 15)}</span>
+    //   );
+    // },
   },
   {
     accessorKey: "jobTags",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Job Tags" />
     ),
-    cell: ({ row }: { row: any }) => {
-      return <span>{generateExcerpt(row.getValue("jobTags")[0], 15)}</span>;
-    },
+    // cell: ({ row }: { row: any }) => {
+    //   return <span>{generateExcerpt(row.getValue("jobTags")[0], 15)}</span>;
+    // },
   },
   {
     accessorKey: "requirements",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Requirements" />
     ),
-    cell: ({ row }: { row: any }) => {
-      return (
-        <span>{generateExcerpt(row.getValue("requirements")[0], 15)}</span>
-      );
-    },
+    // cell: ({ row }: { row: any }) => {
+    //   return (
+    //     <span>{generateExcerpt(row.getValue("requirements")[0], 15)}</span>
+    //   );
+    // },
   },
   {
     accessorKey: "preferredSkills",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Preferred Skills" />
     ),
-    cell: ({ row }: { row: any }) => {
-      return (
-        <span>{generateExcerpt(row.getValue("preferredSkills")[0], 15)}</span>
-      );
-    },
+    // cell: ({ row }: { row: any }) => {
+    //   return (
+    //     <span>{generateExcerpt(row.getValue("preferredSkills")[0], 15)}</span>
+    //   );
+    // },
   },
   {
     accessorKey: "img",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Img" />
     ),
-    cell: ({ row }) => {
-      return <span>{generateExcerpt(row.getValue("img"), 10)}</span>;
-    },
+    // cell: ({ row }) => {
+    //   return <span>{generateExcerpt(row.getValue("img"), 10)}</span>;
+    // },
   },
   {
     id: "actions",

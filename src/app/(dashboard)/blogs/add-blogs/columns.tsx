@@ -47,9 +47,9 @@ export const columns: ColumnDef<Blog>[] = [
   {
     accessorKey: "id",
     header: "Id",
-    cell: ({ row }) => {
-      return <span className="">{generateExcerpt(row.getValue("id"), 7)}</span>;
-    },
+    // cell: ({ row }) => {
+    //   return <span className="">{generateExcerpt(row.getValue("id"), 7)}</span>;
+    // },
   },
   {
     accessorKey: "title",
@@ -74,13 +74,13 @@ export const columns: ColumnDef<Blog>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Description" />
     ),
-    cell: ({ row }) => {
-      return (
-        <span className="">
-          {generateExcerpt(row.getValue("description"), 15)}
-        </span>
-      );
-    },
+    // cell: ({ row }) => {
+    //   return (
+    //     <span className="">
+    //       {generateExcerpt(row.getValue("description"), 15)}
+    //     </span>
+    //   );
+    // },
   },
   {
     accessorKey: "createdBy",
@@ -93,11 +93,11 @@ export const columns: ColumnDef<Blog>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Img" />
     ),
-    cell: ({ row }) => {
-      return (
-        <span className="">{generateExcerpt(row.getValue("img"), 15)}</span>
-      );
-    },
+    // cell: ({ row }) => {
+    //   return (
+    //     <span className="">{generateExcerpt(row.getValue("img"), 15)}</span>
+    //   );
+    // },
   },
   {
     id: "actions",

@@ -102,7 +102,7 @@ async function getData(): Promise<Company[]> {
 export default async function Companies() {
   const data = await getData();
   return (
-    <div className="px-5 lg:px-10 mx-auto py-10">
+    <div className="px-5 lg:px-10 space-y-6 mx-auto py-10">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
         <p className="text-muted-foreground">

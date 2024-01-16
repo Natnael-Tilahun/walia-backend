@@ -19,6 +19,8 @@ import { usePathname } from "next/navigation";
 export function Sidebar({ className, setMenu }: any) {
   const [position, setPosition] = useState("bottom");
   const pathName = usePathname();
+  const activeLinkStyle = 'bg-accent text-primary'
+
   return (
     <div className={cn(`pb-12  min-h-screen bg-inherit  `, className)}>
       <div className="space-y-4 py-4">
@@ -42,7 +44,7 @@ export function Sidebar({ className, setMenu }: any) {
               href="/"
               onClick={() => setMenu(false)}
               className={`w-full flex items-center hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
-                pathName == "/" ? "bg-slate-200" : ""
+                pathName == "/" ? activeLinkStyle : ""
               }`}
             >
               <svg
@@ -60,10 +62,9 @@ export function Sidebar({ className, setMenu }: any) {
 
             <Collapsible>
               <CollapsibleTrigger asChild>
-                <Link
-                  href="/users"
+                <p
                   className={`w-full flex items-center hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
-                    pathName == "/users" ? "bg-slate-200" : ""
+                    (pathName == "/users/view-users" || pathName == "/users/add-users" ) ? activeLinkStyle : ""
                   }`}
                 >
                   <svg
@@ -89,13 +90,15 @@ export function Sidebar({ className, setMenu }: any) {
                   >
                     <path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"></path>
                   </svg>
-                </Link>
+                </p>
               </CollapsibleTrigger>
-              <CollapsibleContent className="px-4">
+              <CollapsibleContent className="px-4 text-sm">
                 <Link
-                  href="/users"
+                  href="/users/view-users"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-2 mt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
+                  className={`w-full flex items-center pt-2 mt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/users/view-users" ? activeLinkStyle : ""
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -112,9 +115,11 @@ export function Sidebar({ className, setMenu }: any) {
                   View Users
                 </Link>
                 <Link
-                  href="/users"
+                  href="/users/add-users"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-2 mt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
+                  className={`w-full flex items-center pt-2 mt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/users/add-users" ? activeLinkStyle : ""
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -135,10 +140,9 @@ export function Sidebar({ className, setMenu }: any) {
 
             <Collapsible>
               <CollapsibleTrigger asChild>
-                <Link
-                  href="/jobs"
+                <p
                   className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
-                    pathName == "/jobs" ? "bg-slate-200" : ""
+                    (pathName == "/jobs/view-jobs" || pathName == "/jobs/add-jobs") ? activeLinkStyle : ""
                   }`}
                 >
                   <svg
@@ -164,13 +168,15 @@ export function Sidebar({ className, setMenu }: any) {
                   >
                     <path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"></path>
                   </svg>
-                </Link>
+                </p>
               </CollapsibleTrigger>
-              <CollapsibleContent className="px-4">
+              <CollapsibleContent className="px-4 text-sm">
                 <Link
-                  href="/jobs"
+                  href="/jobs/view-jobs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
+                  className={`w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/jobs/view-jobs" ? activeLinkStyle : ""
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -187,9 +193,11 @@ export function Sidebar({ className, setMenu }: any) {
                   View Jobs
                 </Link>
                 <Link
-                  href="/jobs"
+                  href="/jobs/add-jobs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center pt-2 mt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
+                  className={`w-full flex items-center pt-2 mt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/jobs/add-jobs" ? activeLinkStyle : ""
+                  }`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -210,10 +218,9 @@ export function Sidebar({ className, setMenu }: any) {
 
             <Collapsible>
               <CollapsibleTrigger asChild>
-                <Link
-                  href="/companies"
+                <p
                   className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
-                    pathName == "/companies" ? "bg-slate-200" : ""
+                    (pathName == "/companies/view-companies" || pathName == "/companies/add-companies") ? activeLinkStyle: ""
                   }`}
                 >
                   <svg
@@ -239,13 +246,15 @@ export function Sidebar({ className, setMenu }: any) {
                   >
                     <path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"></path>
                   </svg>
-                </Link>
+                </p>
               </CollapsibleTrigger>
-              <CollapsibleContent className="px-4">
+              <CollapsibleContent className="px-4 text-sm">
                 <Link
-                  href="/companies"
+                  href="/companies/view-companies"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
+                  className={`w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/companies/view-companies" ? activeLinkStyle : ""
+                  } `}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -262,9 +271,11 @@ export function Sidebar({ className, setMenu }: any) {
                   View Companies
                 </Link>
                 <Link
-                  href="/companies"
+                  href="/companies/add-companies"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md  "
+                  className={`w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/companies/add-companies" ? activeLinkStyle : ""
+                  } `}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -285,10 +296,9 @@ export function Sidebar({ className, setMenu }: any) {
 
             <Collapsible>
               <CollapsibleTrigger asChild>
-                <Link
-                  href="/blogs"
+                <p
                   className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
-                    pathName == "/blogs" ? "bg-slate-200" : ""
+                    (pathName == "/blogs/view-blogs" || pathName == "/blogs/add-blogs") ? activeLinkStyle : ""
                   }`}
                 >
                   <svg
@@ -314,13 +324,15 @@ export function Sidebar({ className, setMenu }: any) {
                   >
                     <path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"></path>
                   </svg>
-                </Link>
+                </p>
               </CollapsibleTrigger>
-              <CollapsibleContent className="px-4">
+              <CollapsibleContent className="px-4 text-sm">
                 <Link
-                  href="/blogs"
+                  href="/blogs/view-blogs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
+                  className={`w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/blogs/view-blogs" ? activeLinkStyle : ""
+                  } `}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -337,9 +349,11 @@ export function Sidebar({ className, setMenu }: any) {
                   View Blogs
                 </Link>
                 <Link
-                  href="/blogs"
+                  href="/blogs/add-blogs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
+                  className={`w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/blogs/add-blogs" ? activeLinkStyle : ""
+                  } `}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -360,10 +374,9 @@ export function Sidebar({ className, setMenu }: any) {
 
             <Collapsible>
               <CollapsibleTrigger asChild>
-                <Link
-                  href="/"
+                <p
                   className={`w-full flex items-center md:justify-center lg:justify-start hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
-                    pathName == "/cvs" ? "bg-slate-200" : ""
+                    (pathName == "/cvs/view-cvs" || pathName == "/cvs/add-cvs") ? activeLinkStyle : ""
                   }`}
                 >
                   <svg
@@ -389,13 +402,15 @@ export function Sidebar({ className, setMenu }: any) {
                   >
                     <path d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"></path>
                   </svg>
-                </Link>
+                </p>
               </CollapsibleTrigger>
-              <CollapsibleContent className="px-4">
+              <CollapsibleContent className="px-4 text-sm">
                 <Link
-                  href="/cvs"
+                  href="/cvs/view-cvs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-3 py-2 rounded-md "
+                  className={`w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-3 py-2 rounded-md ${
+                    pathName == "/cvs/view-cvs" ? activeLinkStyle : ""
+                  } `}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -412,9 +427,11 @@ export function Sidebar({ className, setMenu }: any) {
                   View CVs
                 </Link>
                 <Link
-                  href="/cvs"
+                  href="/cvs/add-cvs"
                   onClick={() => setMenu(false)}
-                  className="w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md "
+                  className={`w-full flex items-center mt-2 pt-2 pb-2 hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
+                    pathName == "/cvs/add-cvs" ? activeLinkStyle : ""
+                  } `}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

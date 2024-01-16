@@ -90,15 +90,15 @@ async function getData(): Promise<User[]> {
   ];
 }
 
-export default async function Users() {
+export default async function AddUsers() {
   const data = await getData();
 
   return (
-    <div className="px-5 lg:px-10 mx-auto py-10">
+    <div className="px-5 lg:px-10 mx-auto space-y-6 py-10">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
         <p className="text-muted-foreground">
-          Here&apos;s a list of your users!
+          Create a users!
         </p>
       </div>
       <DataTable columns={columns} data={data} />

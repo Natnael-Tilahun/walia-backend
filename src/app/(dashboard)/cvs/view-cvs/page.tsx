@@ -1,7 +1,7 @@
 import { DataTable } from "@/components/data-table";
-import { Blog, columns } from "./columns";
+import { CV, columns } from "./columns";
 
-async function getData(): Promise<Blog[]> {
+async function getData(): Promise<CV[]> {
   return [
     {
       id: "65299de3c6773259db14ee09",
@@ -26,16 +26,14 @@ async function getData(): Promise<Blog[]> {
   ];
 }
 
-export default async function Blogs() {
+export default async function CVs() {
   const data = await getData();
 
   return (
-    <div className="px-5 lg:px-10 mx-auto py-10">
+    <div className="px-5 lg:px-10 mx-auto space-y-6 py-10">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
-        <p className="text-muted-foreground">
-          Here&apos;s a list of your blogs!
-        </p>
+        <p className="text-muted-foreground">Here&apos;s a list of your cvs!</p>
       </div>
       <DataTable columns={columns} data={data} />
     </div>

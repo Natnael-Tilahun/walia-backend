@@ -67,9 +67,9 @@ export const columns: ColumnDef<Company>[] = [
   {
     accessorKey: "id",
     header: "Id",
-    cell: ({ row }) => {
-      return <span className="">{generateExcerpt(row.getValue("id"), 5)}</span>;
-    },
+    // cell: ({ row }) => {
+    //   return <span className="">{generateExcerpt(row.getValue("id"), 5)}</span>;
+    // },
   },
   {
     accessorKey: "name",
@@ -106,13 +106,13 @@ export const columns: ColumnDef<Company>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Company Logo" />
     ),
-    cell: ({ row }) => {
-      return (
-        <span className="">
-          {generateExcerpt(row.getValue("companyLogo"), 15)}
-        </span>
-      );
-    },
+    // cell: ({ row }) => {
+    //   return (
+    //     <span className="">
+    //       {generateExcerpt(row.getValue("companyLogo"), 15)}
+    //     </span>
+    //   );
+    // },
   },
   {
     accessorKey: "employeeNumber",
@@ -131,20 +131,20 @@ export const columns: ColumnDef<Company>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="About" />
     ),
-    cell: ({ row }) => {
-      return (
-        <span className="">{generateExcerpt(row.getValue("about"), 15)}</span>
-      );
-    },
+    // cell: ({ row }) => {
+    //   return (
+    //     <span className="">{generateExcerpt(row.getValue("about"), 15)}</span>
+    //   );
+    // },
   },
   {
     accessorKey: "jobs",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Jobs" />
     ),
-    cell: ({ row }: { row: any }) => {
-      return <span>{generateExcerpt(row.getValue("jobs")[0], 5)}</span>;
-    },
+    // cell: ({ row }: { row: any }) => {
+    //   return <span>{generateExcerpt(row.getValue("jobs")[0], 5)}</span>;
+    // },
   },
   {
     id: "actions",

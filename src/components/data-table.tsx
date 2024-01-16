@@ -24,14 +24,6 @@ import {
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
 import { MixerHorizontalIcon } from "@radix-ui/react-icons";
 import { DataTablePagination } from "./data-table-pagination";
 import { DataTableViewOptions } from "./data-table-view-options";
@@ -73,8 +65,8 @@ export function DataTable<TData, TValue>({
     <div>
       <DataTableToolbar table={table} />
       <div className="rounded-md border mb-5 w-full">
-        <Table className=" text-xxs md:xs ">
-          <TableHeader>
+        <Table className="">
+          <TableHeader className="bg-accent">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {

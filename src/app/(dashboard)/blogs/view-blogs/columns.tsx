@@ -14,7 +14,7 @@ import { generateExcerpt } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
-export type CV = {
+export type Blog = {
   id: string;
   title: string;
   author: string;
@@ -24,7 +24,7 @@ export type CV = {
   img: string;
 };
 
-export const columns: ColumnDef<CV>[] = [
+export const columns: ColumnDef<Blog>[] = [
   {
     id: "select",
     header: ({ table }) => (
@@ -47,9 +47,9 @@ export const columns: ColumnDef<CV>[] = [
   {
     accessorKey: "id",
     header: "Id",
-    cell: ({ row }) => {
-      return <span className="">{generateExcerpt(row.getValue("id"), 7)}</span>;
-    },
+    // cell: ({ row }) => {
+    //   return <span className="">{generateExcerpt(row.getValue("id"), 7)}</span>;
+    // },
   },
   {
     accessorKey: "title",
@@ -74,13 +74,13 @@ export const columns: ColumnDef<CV>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Description" />
     ),
-    cell: ({ row }) => {
-      return (
-        <span className="">
-          {generateExcerpt(row.getValue("description"), 15)}
-        </span>
-      );
-    },
+    // cell: ({ row }) => {
+    //   return (
+    //     <span className="">
+    //       {generateExcerpt(row.getValue("description"), 15)}
+    //     </span>
+    //   );
+    // },
   },
   {
     accessorKey: "createdBy",
@@ -93,11 +93,11 @@ export const columns: ColumnDef<CV>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Img" />
     ),
-    cell: ({ row }) => {
-      return (
-        <span className="">{generateExcerpt(row.getValue("img"), 15)}</span>
-      );
-    },
+    // cell: ({ row }) => {
+    //   return (
+    //     <span className="">{generateExcerpt(row.getValue("img"), 15)}</span>
+    //   );
+    // },
   },
   {
     id: "actions",
@@ -117,12 +117,12 @@ export const columns: ColumnDef<CV>[] = [
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(user.id)}
             >
-              Copy CV ID
+              Copy Blog ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem> Edit CV</DropdownMenuItem>
-            <DropdownMenuItem>Delete CV</DropdownMenuItem>
-            <DropdownMenuItem>View CV Details</DropdownMenuItem>
+            <DropdownMenuItem> Edit Blog</DropdownMenuItem>
+            <DropdownMenuItem>Delete Blog</DropdownMenuItem>
+            <DropdownMenuItem>View Blog Details</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
