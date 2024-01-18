@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 import Link from "next/link";
-import { UserNav } from "@/components/user-nav";
+import { UserNav } from "@/components/header/user-nav";
 import { Sidebar } from "@/components/sidebar";
 import { useState } from "react";
 
