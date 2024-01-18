@@ -21,8 +21,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { useState } from "react";
 import { MixerHorizontalIcon } from "@radix-ui/react-icons";
 import { DataTablePagination } from "./data-table-pagination";

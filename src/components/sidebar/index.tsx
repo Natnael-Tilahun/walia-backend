@@ -2,7 +2,6 @@
 
 import { cn } from "@/lib/utils";
 // import { Playlist } from "../data/playlists";
-import { Button } from "../ui/button";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -109,13 +108,17 @@ export function Sidebar({ className, setMenu }: any) {
           <div className="space-y-6 px-5 flex flex-col">
             {links.map((link, index) => {
               if ("dropdown" in link) {
+                const dropdownLink = link as {
+                  dropdown: { href: string; label: string; icon?: string }[];
+                };
+
                 return (
                   <Collapsible key={index}>
                     <CollapsibleTrigger asChild>
                       <p
                         className={`w-full flex items-center hover:bg-slate-200 transition ease-in-out duration-150 delay-100 px-2 py-2 rounded-md ${
-                          pathName == link.dropdown[0].href ||
-                          pathName == link.dropdown[1].href
+                          pathName == dropdownLink?.dropdown[0].href ||
+                          pathName == dropdownLink?.dropdown[1].href
                             ? activeLinkStyle
                             : ""
                         }`}
@@ -143,7 +146,7 @@ export function Sidebar({ className, setMenu }: any) {
                       </p>
                     </CollapsibleTrigger>
                     <CollapsibleContent className="px-4 text-sm">
-                      {link.dropdown.map((dropdown, index) => (
+                      {dropdownLink?.dropdown.map((dropdown, index) => (
                         <Link
                           key={index}
                           href={dropdown.href}
@@ -152,13 +155,16 @@ export function Sidebar({ className, setMenu }: any) {
                             pathName == dropdown.href ? activeLinkStyle : ""
                           }`}
                         >
-                          <Image
-                            width="16"
-                            height="16"
-                            src={dropdown.icon}
-                            alt="Icon"
-                            className="mr-2"
-                          />
+                          {dropdown.icon && (
+                            <Image
+                              width="16"
+                              height="16"
+                              src={dropdown.icon}
+                              alt="Icon"
+                              className="mr-2"
+                            />
+                          )}
+
                           {dropdown.label}
                         </Link>
                       ))}
