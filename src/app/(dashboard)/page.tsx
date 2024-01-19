@@ -1,3 +1,4 @@
+import PageTitle from "@/components/PageTitle";
 import { CalendarDateRangePicker } from "@/components/dashboard/date-range-picker";
 import { Overview } from "@/components/dashboard/overview";
 import { RecentSales } from "@/components/dashboard/recent-sales";
@@ -15,9 +16,13 @@ export default function Home() {
   return (
     <main className="flex w-full min-h-screen flex-col justify-between gap-5 lg:gap-0 p-5 lg:p-10">
       <div className="flex flex-col   w-full md:flex-row items-center justify-between space-y-2">
-        <h2 className="lg:text-3xl md:text-xl font-bold tracking-tight">
-          Dashboard
-        </h2>
+        <div>
+          <h3 className="text-2xl font-semibold">Good evening, Nhatty! 🚀</h3>
+          <p className="text-sm text-muted-foreground">
+            See what’s happening in our company.
+          </p>
+        </div>
+
         <div className="flex w-full items-center justify-end md:w-auto  space-x-2">
           <CalendarDateRangePicker />
           <Button>Download</Button>

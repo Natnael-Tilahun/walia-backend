@@ -1,5 +1,8 @@
 import { DataTable } from "@/components/data-table";
 import { columns, Job } from "./columns";
+import PageTitle from "@/components/PageTitle";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 async function getData(): Promise<Job[]> {
   return [
@@ -131,9 +134,11 @@ export default async function Jobs() {
 
   return (
     <div className="px-5 lg:px-10 space-y-6 mx-auto py-10">
-      <div>
-        <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
-        <p className="text-muted-foreground">Here&apos;s a list of jobs!</p>
+      <div className="flex justify-between">
+        <PageTitle title="Jobs" sub="View, edit, delete jobs here." />
+        <Link href="/jobs/add-jobs">
+          <Button>Add Jobs</Button>
+        </Link>
       </div>
       <DataTable columns={columns} data={data} />
     </div>

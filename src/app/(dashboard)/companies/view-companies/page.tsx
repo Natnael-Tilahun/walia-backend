@@ -1,5 +1,8 @@
 import { DataTable } from "@/components/data-table";
 import { columns, Company } from "./columns";
+import PageTitle from "@/components/PageTitle";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 async function getData(): Promise<Company[]> {
   return [
@@ -103,11 +106,11 @@ export default async function Companies() {
   const data = await getData();
   return (
     <div className="px-5 lg:px-10 space-y-6 mx-auto py-10">
-      <div>
-        <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
-        <p className="text-muted-foreground">
-          Here&apos;s a list of companies!
-        </p>
+      <div className="flex justify-between">
+        <PageTitle title="Companies" sub="View, edit, delete companies here." />
+        <Link href="/companies/add-companies">
+          <Button>Add Companies</Button>
+        </Link>
       </div>
       <DataTable columns={columns} data={data} />
     </div>

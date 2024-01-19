@@ -1,5 +1,8 @@
 import { DataTable } from "@/components/data-table";
 import { Blog, columns } from "./columns";
+import PageTitle from "@/components/PageTitle";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 async function getData(): Promise<Blog[]> {
   return [
@@ -31,11 +34,11 @@ export default async function Blogs() {
 
   return (
     <div className="px-5 lg:px-10 space-y-6 mx-auto py-10">
-      <div>
-        <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
-        <p className="text-muted-foreground">
-          Here&apos;s a list of your blogs!
-        </p>
+      <div className="flex justify-between">
+        <PageTitle title="Blogs" sub="View, edit, delete blogs here." />
+        <Link href="/blogs/add-blogs">
+          <Button>Add Blog</Button>
+        </Link>
       </div>
       <DataTable columns={columns} data={data} />
     </div>

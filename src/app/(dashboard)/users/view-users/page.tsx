@@ -1,5 +1,8 @@
 import { DataTable } from "@/components/data-table";
 import { User, columns } from "./columns";
+import PageTitle from "@/components/PageTitle";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 async function getData(): Promise<User[]> {
   return [
@@ -95,11 +98,15 @@ export default async function ViewUsers() {
 
   return (
     <div className="px-5 lg:px-10 mx-auto space-y-6 py-10">
-      <div>
-        <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
-        <p className="text-muted-foreground">
-          View, update, delete a list of your users!
-        </p>
+      <div className="flex justify-between">
+        <PageTitle
+          title="Users"
+          sub="  View, update, delete a list of your users!"
+        />
+
+        <Link href="/users/add-users">
+          <Button>Add User</Button>
+        </Link>
       </div>
       <DataTable columns={columns} data={data} />
     </div>

@@ -1,5 +1,8 @@
 import { DataTable } from "@/components/data-table";
 import { CV, columns } from "./columns";
+import PageTitle from "@/components/PageTitle";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 async function getData(): Promise<CV[]> {
   return [
@@ -31,9 +34,11 @@ export default async function CVs() {
 
   return (
     <div className="px-5 lg:px-10 mx-auto space-y-6 py-10">
-      <div>
-        <h2 className="text-2xl font-bold tracking-tight">Welcome back!</h2>
-        <p className="text-muted-foreground">Here&apos;s a list of your cvs!</p>
+      <div className="flex justify-between">
+        <PageTitle title="CVs" sub="View, edit, delete cvs here." />
+        <Link href="/cvs/add-cvs">
+          <Button>Add CVs</Button>
+        </Link>
       </div>
       <DataTable columns={columns} data={data} />
     </div>
